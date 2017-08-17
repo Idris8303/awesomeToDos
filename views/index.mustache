@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h1>Todos</h1>
+
+    <form method="post" action="/todos">
+      <input type="text" name="description" />
+      <button type="submit">Add Todo</button>
+
+    </form>
+
+    {{#todos}}
+    <form method="post" action="/todos/delete/{{_id}}">
+      <button type="submit">Delete</button>
+      <div>{{description}} - {{done}} - {{createdAt}}</div>
+      </form>
+    {{/todos}}
+  </body>
+</html>
